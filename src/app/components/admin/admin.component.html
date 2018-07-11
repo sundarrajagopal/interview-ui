@@ -1,0 +1,37 @@
+<div class="container">
+
+  <div class="row">
+    <a class="btn btn=primary" routerLink="">Back to Registration</a>
+  </div>
+  <table class="table table-bordered table-inverse">
+
+    <tr>
+      <th>Candidate Name</th>
+      <th>Recruiter Name</th>
+      <th>Candidate e-mail</th>
+      <th class="text-right">Phone Number</th>
+      <th>Schedule Date/Time</th>
+    </tr>
+    <tr *ngFor="let candidate of candidates">
+      <td>
+        <a [routerLink]="['/admin/view', candidate.candidateId]">{{candidate.candidateName}}</a>
+      </td>
+
+      <td>
+        {{candidate.recruiterName}}
+      </td>
+
+      <td>
+        {{candidate.emailAddress}}
+      </td>
+
+      <td class="text-right">
+        {{candidate.phoneNumber}}
+      </td>
+
+      <td>
+        {{candidate.interviewScheduleDate}}
+      </td>
+    </tr>
+  </table>
+</div>

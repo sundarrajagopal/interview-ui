@@ -1,0 +1,62 @@
+<div class="container">
+    <div class="row">
+        <a class="btn btn=primary" routerLink="/admin">Back to View</a>
+    </div>
+
+   
+
+    <form [formGroup]="candidateForm" (ngSubmit)="submitRegistration()" novalidate>
+      <div *ngIf="validMessage != ''">
+        <h3 class="has-info">{{validMessage}}</h3>
+      </div>
+      <div class="form-group">
+        <label>Recruiter Name</label>
+        <input type="text" class="form-control" formControlName="recruiterName" required autofocus/>
+      </div>
+      <div class="form-group">
+        <label>Candidate Name</label>
+        <input type="text" class="form-control" formControlName="candidateName" required/>
+      </div>
+      <div class="form-group">
+        <label>Candidate Phone</label>
+        <input type="text" class="form-control" formControlName="phoneNumber" required/>
+      </div>
+
+      <div class="form-group">
+          <label>Candidate E-Mail</label>
+          <input type="text" class="form-control" formControlName="emailAddress" required/>
+        </div>
+
+       <div class="form-group">
+            <label>Candidate Skype</label>
+            <input type="text" class="form-control" formControlName="skypeId" required/>
+       </div>
+
+      <div class="form-group">
+            <label>Schedule Date</label>
+            <input type="text" class="form-control" formControlName="interviewScheduleDate" required/>
+      </div>
+
+      <div class="form-group">
+        <label>Track</label>
+        <select class="form-control" formControlName="technicalStack" required>
+          <option value="">Please select a stack</option>
+          <option *ngFor="let m of technicalStack"
+                  [value]="m">
+                  {{m}}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Interviewer Name</label>
+        <input type="text" class="form-control" formControlName="interviewer" required/>
+      </div>
+      <div class="form-group">
+        <label>Years of Experience</label>
+        <input type="text" class="form-control" formControlName="yearsOfExperience" required/>
+      </div>
+      
+  
+      <button type="submit" class="btn btn-primary" >Submit</button>
+    </form>
+  </div>
